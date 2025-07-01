@@ -1,0 +1,290 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0b1023;
+  color: white;
+}
+
+.container {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 20px;
+}
+
+.progress img,
+.progress svg {
+  width: 32px;
+  height: 32px;
+}
+
+.section-title {
+  font-size: 18px;
+  margin: 16px 0;
+}
+
+.card {
+  background-color: #0d152b;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 16px 0;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.card img {
+  width: 100px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.card-text {
+  text-align: left;
+  font-size: 14px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: #00d2ff;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #00aacc;
+}
+
+.foundation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.foundation-card {
+  background-color: #1e2a4a;
+  padding: 24px;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.foundation-card.selected {
+  outline: 2px solid #00d2ff;
+}
+
+.inputField {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  border-radius: 8px;
+  border: none;
+}
+
+.inputField.error {
+  border: 2px solid red;
+}
+
+.summaryTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.summaryTable th,
+.summaryTable td {
+  border: 1px solid white;
+  padding: 8px;
+}
+.container > p {
+  color: #bfc9e0;
+  font-weight: 400;
+}
+
+/* Progress Bar Styles */
+.progress-bar {
+  display: flex;
+  gap: 24px; /* slightly more horizontal space */
+  margin-bottom: 32px;
+  align-items: center;
+  justify-content: center; /* <-- center horizontally */
+}
+.progress-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e0e7ef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.progress-circle.active {
+  background: #2563eb;
+}
+.progress-circle.active img {
+  filter: brightness(0) invert(1);
+}
+.progress-circle img {
+  width: 22px;
+  height: 22px;
+}
+
+/* Form Layout */
+.form-row {
+  display: flex;
+  gap: 72px; /* more horizontal space between fields */
+  margin-bottom: 24px; /* more vertical space between rows */
+}
+
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* vertical space between label and input */
+}
+.inputField {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 4px;
+  font-size: 16px;
+}
+.inputField.error {
+  border-color: #e53e3e;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  gap: 16px;
+}
+/* Responsive */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+
+/* Step 2 type options */
+.type-options {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  margin: 32px 0;
+}
+.type-card {
+  background: #1e2a4a;
+  border-radius: 12px;
+  padding: 24px 32px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid transparent;
+  transition: border 0.2s;
+}
+.type-card.selected {
+  border: 2px solid #2563eb;
+  background: #22336b;
+}
+.type-card img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 12px;
+}
+.subtitle {
+  color: #bfc9e0;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+/* Before button style */
+.before-btn {
+  background: #fff;
+  color: #22336b;
+  border: 2px solid #2563eb;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.before-btn:hover {
+  background: #f0f4fa;
+}
+.progress-bar {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
+  align-items: center;
+  justify-content: center;
+}
+.progress-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e0e7ef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.progress-circle.active {
+  background: #2563eb;
+}
+.progress-circle.active img {
+  filter: brightness(0) invert(1);
+}
+.progress-circle img {
+  width: 22px;
+  height: 22px;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  gap: 16px;
+}
+.before-btn {
+  background: #fff;
+  color: #22336b;
+  border: 2px solid #2563eb;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.before-btn:hover {
+  background: #f0f4fa;
+}
+.subtitle {
+  color: #bfc9e0;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
