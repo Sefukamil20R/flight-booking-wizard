@@ -27,8 +27,21 @@ export default function Step1() {
       <p className="subtitle">All the plane tickets you are looking for together!</p>
 
       <div className="progress-bar">
-        {/* ...progress circles... */}
-      </div>
+<div className="progress-circle active">
+          <img src="/location.png" alt="Step 1" />
+        </div>
+        <div className="progress-circle">
+          <img src="/type.png" alt="Step 2" />
+        </div>
+        <div className="progress-circle">
+          <img src="/plan.png" alt="Step 3" />
+        </div>
+        <div className="progress-circle">
+          <img src="/bx_bx-detail.png" alt="Step 4" />
+        </div>
+        <div className="progress-circle">
+          <img src="/love.png" alt="Step 5" />
+        </div>      </div>
 
       <div className="form-row">
         <div className="form-group">

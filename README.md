@@ -65,8 +65,4 @@ flight-booking-form/
 - `pages/` — Next.js pages for each step and thank you
 - `public/` — Images and static assets
 - `styles/` — Global CSS styles
-## Customization
-
-- Update images in the `public/` folder as needed.
-- Adjust validation logic or add more fields in each step as required.
 
