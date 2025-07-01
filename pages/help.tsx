@@ -49,7 +49,7 @@ export default function HelpPage() {
             }}
             style={{ cursor: "pointer" }}
           >
-            <img src={`/foundation${i}.png`} alt="Foundation" className="foundation-img" />
+            <img src={`/Foundation${i}.png`} alt="Foundation" className="foundation-img" />
             <div>Foundation</div>
           </div>
         ))}

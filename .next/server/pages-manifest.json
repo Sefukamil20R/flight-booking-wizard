@@ -2,10 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/help": "pages/help.js",
-  "/step1": "pages/step1.js",
-  "/step2": "pages/step2.js",
-  "/step3": "pages/step3.js",
+  "/thankyou": "pages/thankyou.js",
   "/miles": "pages/miles.js",
-  "/thankyou": "pages/thankyou.js"
+  "/help": "pages/help.js"
 }
