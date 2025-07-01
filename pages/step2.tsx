@@ -6,9 +6,14 @@ export default function Step2() {
   const router = useRouter();
   const { form, setForm } = useForm();
   const [selected, setSelected] = useState<'business' | 'economy' | null>(form.type as any);
+  const [error, setError] = useState<string>("");
 
   const handleNext = () => {
-    if (!selected) return;
+    if (!selected) {
+      setError("Please select a flight type.");
+      return;
+    }
+    setError("");
     setForm({ type: selected });
     router.push('/step3');
   };
@@ -40,19 +45,27 @@ export default function Step2() {
       <div className="type-options">
         <div
           className={`type-card${selected === 'economy' ? ' selected' : ''}`}
-          onClick={() => setSelected('economy')}
+          onClick={() => {
+            setSelected('economy');
+            setError("");
+          }}
         >
           <img src="/economy.png" alt="Economy" />
           <span>Economy</span>
         </div>
         <div
           className={`type-card${selected === 'business' ? ' selected' : ''}`}
-          onClick={() => setSelected('business')}
+          onClick={() => {
+            setSelected('business');
+            setError("");
+          }}
         >
           <img src="/business.png" alt="Business" />
           <span>Business</span>
         </div>
       </div>
+
+      {error && <span className="error-message">{error}</span>}
 
       <div className="buttons">
         <button
@@ -65,7 +78,6 @@ export default function Step2() {
         <button
           type="button"
           onClick={handleNext}
-          disabled={!selected}
         >
           Next
         </button>

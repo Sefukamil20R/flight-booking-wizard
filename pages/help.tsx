@@ -1,12 +1,24 @@
+import { useState } from 'react';
 import Link from 'next/link';
 
 export default function HelpPage() {
+  const [selected, setSelected] = useState<number | null>(null);
+  const [error, setError] = useState<string>("");
+
+  const handleSubmit = (e: React.MouseEvent) => {
+    if (selected === null) {
+      setError("Please select a foundation to help.");
+      e.preventDefault();
+    } else {
+      setError("");
+    }
+  };
+
   return (
     <div className="container">
       <h2>Search Flights, Cheapest Flights</h2>
       <p className="subtitle">All the plane tickets you are looking for together!</p>
 
-      {/* Progress Indicator */}
       <div className="progress-bar">
         <div className="progress-circle">
           <img src="/location.png" alt="Step 1" />
@@ -26,29 +38,30 @@ export default function HelpPage() {
       </div>
 
       <h3 className="section-title">Who do you want to help?</h3>
-
       <div className="foundation-grid">
-        <div className="foundation-card">
-          <img src="/foundation1.png" alt="Foundation" className="foundation-img" />
-          <div>Foundation</div>
-        </div>
-        <div className="foundation-card">
-          <img src="/foundation2.png" alt="Foundation" className="foundation-img" />
-          <div>Foundation</div>
-        </div>
-        <div className="foundation-card">
-          <img src="/foundation3.png" alt="Foundation" className="foundation-img" />
-          <div>Foundation</div>
-        </div>
-        <div className="foundation-card">
-          <img src="/foundation4.png" alt="Foundation" className="foundation-img" />
-          <div>Foundation</div>
-        </div>
+        {[1, 2, 3, 4].map(i => (
+          <div
+            key={i}
+            className={`foundation-card${selected === i ? ' selected' : ''}`}
+            onClick={() => {
+              setSelected(i);
+              setError("");
+            }}
+            style={{ cursor: "pointer" }}
+          >
+            <img src={`/foundation${i}.png`} alt="Foundation" className="foundation-img" />
+            <div>Foundation</div>
+          </div>
+        ))}
       </div>
+      {error && <span className="error-message">{error}</span>}
 
       <div className="buttons">
         <Link href="/miles">
           <button className="before-btn">Before</button>
+        </Link>
+        <Link href="/thankyou" onClick={handleSubmit}>
+          <button>Submit</button>
         </Link>
       </div>
     </div>

@@ -12,6 +12,11 @@
   ],
   "rootMainFiles": [],
   "pages": {
+    "/": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/index.js"
+    ],
     "/_app": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
@@ -32,10 +37,25 @@
       "static/chunks/main.js",
       "static/chunks/pages/miles.js"
     ],
+    "/step1": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/step1.js"
+    ],
+    "/step2": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/step2.js"
+    ],
     "/step3": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/step3.js"
+    ],
+    "/thankyou": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/thankyou.js"
     ]
   },
   "ampFirstPages": []

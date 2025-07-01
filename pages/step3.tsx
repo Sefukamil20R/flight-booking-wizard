@@ -1,16 +1,26 @@
 import { useRouter } from 'next/router';
 import { useForm } from '../context/FormContext';
+import { useState } from 'react';
 
 export default function Step3() {
   const router = useRouter();
   const { form } = useForm();
+  const [error, setError] = useState<string>("");
+
+  const handleNext = () => {
+    if (!form.from || !form.to || !form.departDate || !form.returnDate || !form.type) {
+      setError("Some required information is missing. Please go back and complete all steps.");
+      return;
+    }
+    setError("");
+    router.push('/miles');
+  };
 
   return (
     <div className="container">
       <h2>Search Flights, Cheapest Flights</h2>
       <p className="subtitle">All the plane tickets you are looking for together!</p>
 
-      {/* Progress Indicator */}
       <div className="progress-bar">
         <div className="progress-circle">
           <img src="/location.png" alt="Step 1" />
@@ -29,7 +39,6 @@ export default function Step3() {
         </div>
       </div>
 
-      {/* Table Title */}
       <h3 style={{ textAlign: 'center', margin: '24px 0 12px 0' }}>Ticket Information</h3>
 
       <table className="summaryTable">
@@ -53,6 +62,8 @@ export default function Step3() {
         </tbody>
       </table>
 
+      {error && <span className="error-message">{error}</span>}
+
       <div className="buttons">
         <button
           className="before-btn"
@@ -63,7 +74,7 @@ export default function Step3() {
         </button>
         <button
           type="button"
-          onClick={() => router.push('/miles')}
+          onClick={handleNext}
         >
           Next
         </button>
